@@ -11,7 +11,7 @@
 #import <Foundation/Foundation.h>
 #import <AsyncDisplayKit/ASDisplayNode.h>
 #import <AsyncDisplayKit/ASDataController.h>
-#import <AsyncDisplayKit/ASAbstractLayoutController.h>
+#import <AsyncDisplayKit/ASScrollDirection.h>
 #import <AsyncDisplayKit/ASLayoutRangeType.h>
 #import <AsyncDisplayKit/ASRangeControllerUpdateRangeProtocol+Beta.h>
 #import <AsyncDisplayKit/ASBaseDefines.h>
@@ -107,23 +107,9 @@ AS_SUBCLASSING_RESTRICTED
 /**
  * @param rangeController Sender.
  *
- * @return an array of index paths corresponding to the nodes currently visible onscreen (i.e., the visible range).
- */
-- (NSArray<NSIndexPath *> *)visibleNodeIndexPathsForRangeController:(ASRangeController *)rangeController;
-
-/**
- * @param rangeController Sender.
- *
  * @return the current scroll direction of the view using this range controller.
  */
 - (ASScrollDirection)scrollDirectionForRangeController:(ASRangeController *)rangeController;
-
-/**
- * @param rangeController Sender.
- *
- * @return the receiver's viewport size (i.e., the screen space occupied by the visible range).
- */
-- (CGSize)viewportSizeForRangeController:(ASRangeController *)rangeController;
 
 /**
  * @param rangeController Sender.
@@ -169,8 +155,8 @@ AS_SUBCLASSING_RESTRICTED
  *
  * Logic for the automatic range mode:
  * 1. If there are no visible node paths available nothing is to be done and no range update will happen
- * 2. The initial range update if the range controller is visible always will be ASLayoutRangeModeCount
- *    (ASLayoutRangeModeMinimum) as it's the initial fetch
+ * 2. The initial range update if the range controller is visible always will be ASLayoutRangeModeMinimum
+ *    as it's the initial fetch
  * 3. The range mode set explicitly via updateCurrentRangeWithMode: will last at least one range update. After that it
  the range controller will use the explicit set range mode until it becomes visible and a new range update was
  triggered or a new range mode via updateCurrentRangeWithMode: is set

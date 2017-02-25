@@ -96,9 +96,9 @@
 		34EFC7741B701D0A00AD841F /* ASAbsoluteLayoutSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = ACF6ED191B17843500DA7C62 /* ASAbsoluteLayoutSpec.mm */; };
 		3C9C128519E616EF00E942A0 /* ASTableViewTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C128419E616EF00E942A0 /* ASTableViewTests.mm */; };
 		509E68601B3AED8E009B9150 /* ASScrollDirection.m in Sources */ = {isa = PBXBuildFile; fileRef = 205F0E111B371BD7007741D0 /* ASScrollDirection.m */; };
-		509E68611B3AEDA0009B9150 /* ASAbstractLayoutController.h in Headers */ = {isa = PBXBuildFile; fileRef = 205F0E171B37339C007741D0 /* ASAbstractLayoutController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		509E68611B3AEDA0009B9150 /* ASAbstractLayoutController.h in Headers */ = {isa = PBXBuildFile; fileRef = 205F0E171B37339C007741D0 /* ASAbstractLayoutController.h */; };
 		509E68621B3AEDA5009B9150 /* ASAbstractLayoutController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 205F0E181B37339C007741D0 /* ASAbstractLayoutController.mm */; };
-		509E68631B3AEDB4009B9150 /* ASCollectionViewLayoutController.h in Headers */ = {isa = PBXBuildFile; fileRef = 205F0E1B1B373A2C007741D0 /* ASCollectionViewLayoutController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		509E68631B3AEDB4009B9150 /* ASCollectionViewLayoutController.h in Headers */ = {isa = PBXBuildFile; fileRef = 205F0E1B1B373A2C007741D0 /* ASCollectionViewLayoutController.h */; };
 		509E68641B3AEDB7009B9150 /* ASCollectionViewLayoutController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 205F0E1C1B373A2C007741D0 /* ASCollectionViewLayoutController.mm */; };
 		509E68651B3AEDC5009B9150 /* CoreGraphics+ASConvenience.h in Headers */ = {isa = PBXBuildFile; fileRef = 205F0E1F1B376416007741D0 /* CoreGraphics+ASConvenience.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		509E68661B3AEDD7009B9150 /* CoreGraphics+ASConvenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 205F0E201B376416007741D0 /* CoreGraphics+ASConvenience.m */; };
@@ -263,7 +263,7 @@
 		B350621D1B010EFD0018CF92 /* ASHighlightOverlayLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 058D09E6195D050800B7D73C /* ASHighlightOverlayLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B350621E1B010EFD0018CF92 /* ASHighlightOverlayLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 058D09E7195D050800B7D73C /* ASHighlightOverlayLayer.mm */; };
 		B350621F1B010EFD0018CF92 /* ASImageProtocols.h in Headers */ = {isa = PBXBuildFile; fileRef = 05F20AA31A15733C00DCA68A /* ASImageProtocols.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B35062201B010EFD0018CF92 /* ASLayoutController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4640521D1A3F83C40061C0BA /* ASLayoutController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B35062201B010EFD0018CF92 /* ASLayoutController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4640521D1A3F83C40061C0BA /* ASLayoutController.h */; };
 		B35062211B010EFD0018CF92 /* ASLayoutRangeType.h in Headers */ = {isa = PBXBuildFile; fileRef = 292C59991A956527007E5DD6 /* ASLayoutRangeType.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B35062241B010EFD0018CF92 /* ASMutableAttributedStringBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 058D09E8195D050800B7D73C /* ASMutableAttributedStringBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B35062251B010EFD0018CF92 /* ASMutableAttributedStringBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 058D09E9195D050800B7D73C /* ASMutableAttributedStringBuilder.m */; };

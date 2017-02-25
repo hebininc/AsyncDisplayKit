@@ -41,7 +41,7 @@
 {
   self = [super init];
   if (self) {
-    _rangeMode = ASLayoutRangeModeCount;
+    _rangeMode = ASLayoutRangeModeUnspecified;
     _allowsSelection = YES;
     _allowsSelectionDuringEditing = NO;
     _allowsMultipleSelection = NO;
@@ -126,7 +126,7 @@
     view.allowsSelectionDuringEditing = pendingState.allowsSelectionDuringEditing;
     view.allowsMultipleSelection = pendingState.allowsMultipleSelection;
     view.allowsMultipleSelectionDuringEditing = pendingState.allowsMultipleSelectionDuringEditing;
-    if (pendingState.rangeMode != ASLayoutRangeModeCount) {
+    if (pendingState.rangeMode != ASLayoutRangeModeUnspecified) {
       [view.rangeController updateCurrentRangeWithMode:pendingState.rangeMode];
     }
   }

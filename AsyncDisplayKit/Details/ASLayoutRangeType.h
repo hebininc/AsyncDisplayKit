@@ -9,19 +9,31 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreGraphics/CGGeometry.h>
+
+typedef struct {
+  CGFloat leadingBufferScreenfuls;
+  CGFloat trailingBufferScreenfuls;
+} ASRangeTuningParameters;
+
+FOUNDATION_EXPORT ASRangeTuningParameters const ASRangeTuningParametersZero;
+
+FOUNDATION_EXPORT BOOL ASRangeTuningParametersEqualToRangeTuningParameters(ASRangeTuningParameters lhs, ASRangeTuningParameters rhs);
 
 /**
  * Each mode has a complete set of tuning parameters for range types.
  * Depending on some conditions (including interface state and direction of the scroll view, state of rendering engine, etc),
  * a range controller can choose which mode it should use at a given time.
  */
-typedef NS_ENUM(NSUInteger, ASLayoutRangeMode) {
+typedef NS_ENUM(NSInteger, ASLayoutRangeMode) {
+  ASLayoutRangeModeUnspecified = -1,
+  
   /**
    * Minimum mode is used when a range controller should limit the amount of work it performs.
    * Thus, fewer views/layers are created and less data is fetched, saving system resources.
    * Range controller can automatically switch to full mode when conditions change.
    */
-  ASLayoutRangeModeMinimum = 0,
+  ASLayoutRangeModeMinimum,
     
   /**
    * Normal/Full mode that a range controller uses to provide the best experience for end users.
@@ -44,17 +56,15 @@ typedef NS_ENUM(NSUInteger, ASLayoutRangeMode) {
    * the content to be restored relatively quickly by re-decoding images (the compressed images are ~10% the size of the decoded ones,
    * and text is a tiny fraction of its rendered size).
    */
-  ASLayoutRangeModeLowMemory,
-  ASLayoutRangeModeCount
+  ASLayoutRangeModeLowMemory
 };
 
-#define ASLayoutRangeModeInvalid ASLayoutRangeModeCount
+static NSInteger const ASLayoutRangeModeCount = 4;
 
 typedef NS_ENUM(NSInteger, ASLayoutRangeType) {
+  ASLayoutRangeTypeVisible,
   ASLayoutRangeTypeDisplay,
-  ASLayoutRangeTypePreload,
-  ASLayoutRangeTypeCount
+  ASLayoutRangeTypePreload
 };
 
-#define ASLayoutRangeTypeRender ASLayoutRangeTypeDisplay
-#define ASLayoutRangeTypePreload ASLayoutRangeTypePreload
+static NSInteger const ASLayoutRangeTypeCount = 3;

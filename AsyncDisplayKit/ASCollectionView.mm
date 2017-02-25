@@ -1670,12 +1670,6 @@ static NSString * const kReuseIdentifier = @"_ASCollectionReuseIdentifier";
   return self.scrollDirection;
 }
 
-- (CGSize)viewportSizeForRangeController:(ASRangeController *)rangeController
-{
-  ASDisplayNodeAssertMainThread();
-  return self.bounds.size;
-}
-
 - (ASInterfaceState)interfaceStateForRangeController:(ASRangeController *)rangeController
 {
   return ASInterfaceStateForDisplayNode(self.collectionNode, self.window);

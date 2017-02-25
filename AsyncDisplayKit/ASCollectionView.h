@@ -14,6 +14,7 @@
 #import <AsyncDisplayKit/ASCollectionViewProtocols.h>
 #import <AsyncDisplayKit/ASBaseDefines.h>
 #import <AsyncDisplayKit/ASBatchContext.h>
+#import <AsyncDisplayKit/ASScrollDirection.h>
 
 @class ASCellNode;
 @class ASCollectionNode;
