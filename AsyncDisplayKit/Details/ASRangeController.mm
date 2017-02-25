@@ -36,7 +36,7 @@
   BOOL _rangeIsValid;
   BOOL _needsRangeUpdate;
   NSSet<NSIndexPath *> *_allPreviousIndexPaths;
-  ASWeakSet<ASCellNode *> *_visibleNodes;
+  NSSet<ASCellNode *> *_visibleNodes;
   ASLayoutRangeMode _currentRangeMode;
   BOOL _preserveCurrentRangeMode;
   BOOL _didRegisterForNodeDisplayNotifications;
@@ -185,7 +185,7 @@ static UIApplicationState __ApplicationState = UIApplicationStateActive;
 // NOTE: There is a minor risk here, if a node is transferred from one range controller
 // to another before the first rc updates and clears the node out of this set. It's a pretty
 // wild scenario that I doubt happens in practice.
-- (void)_setVisibleNodes:(ASWeakSet *)newVisibleNodes
+- (void)_setVisibleNodes:(NSSet *)newVisibleNodes
 {
   for (ASCellNode *node in _visibleNodes) {
     if (![newVisibleNodes containsObject:node] && node.isVisible) {
@@ -232,8 +232,7 @@ static UIApplicationState __ApplicationState = UIApplicationStateActive;
                           visibleIndexPaths:&visibleIndexPaths
                           displayIndexPaths:&displayIndexPaths
                           preloadIndexPaths:&preloadIndexPaths];
-  
-  ASWeakSet *newVisibleNodes = [[ASWeakSet alloc] init];
+  NSMutableSet<ASCellNode *> *newVisibleNodes = [NSMutableSet set];
 
   if (visibleIndexPaths.count == 0) { // if we don't have any visibleNodes currently (scrolled before or after content)...
     [self _setVisibleNodes:newVisibleNodes];
